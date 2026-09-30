@@ -1,0 +1,93 @@
+/* The Vanguards Museum - shared styles */
+:root{
+  --wall:#f3f3f1; --floor:#e8e8e5; --ink:#1d1d1f; --muted:#6a6a6d; --line:#d6d6d2;
+  --accent:#8a6d3b; --side-w:260px;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1rem/1.65 var(--sans);color:var(--ink);background:var(--wall);padding-left:var(--side-w)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* Sidebar */
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--side-w);padding:2.5rem 1.75rem;display:flex;flex-direction:column;background:#fff;border-right:1px solid var(--line);z-index:5}
+.brand{font:600 1.9rem/1.05 var(--serif);text-decoration:none;letter-spacing:.01em}
+.brand small{display:block;margin-top:.5rem;font:400 .8rem/1.4 var(--sans);color:var(--muted)}
+.sidebar nav{margin-top:3rem;display:flex;flex-direction:column}
+.sidebar nav a{padding:.75rem 0 .75rem 1rem;border-left:2px solid transparent;text-decoration:none;color:var(--muted);transition:color .2s,border-color .2s}
+.sidebar nav a span{display:block;font-size:.78rem}
+.sidebar nav a:hover,.sidebar nav a[aria-current]{color:var(--ink);border-color:var(--accent)}
+.sidebar nav a[aria-current]{font-weight:600}
+.side-note{margin-top:auto;font:italic 1rem/1.4 var(--serif);color:var(--muted)}
+
+/* Layout */
+main{max-width:1000px;margin:0 auto;padding:4rem 3rem 5rem}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1}
+h1{font-size:clamp(3rem,7vw,5.5rem);letter-spacing:-.01em}
+h2{font-size:2.1rem;margin-bottom:1rem}
+h3{font-size:1.4rem}
+p{max-width:64ch}
+section{margin-top:4.5rem}
+.lede{font:italic 1.5rem/1.4 var(--serif);margin-top:1.5rem;max-width:34ch}
+
+/* Lobby */
+.hero{padding:3rem 0;border-bottom:1px solid var(--line)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.preserve-list{list-style:none;padding:0;border-top:1px solid var(--line)}
+.preserve-list li{padding:.9rem 0;border-bottom:1px solid var(--line)}
+.preserve-list strong{font-family:var(--serif);font-size:1.25rem;font-weight:600;display:block}
+.members{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2.5rem 2rem}
+.member h3{font-size:1.3rem}
+.member .role{font-size:.8rem;color:var(--accent);margin-bottom:.15rem}
+.room-links{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.room-links a{display:block;padding:1.5rem;background:#fff;border:1px solid var(--line);text-decoration:none;transition:border-color .2s}
+.room-links a:hover{border-color:var(--accent)}
+.room-links span{display:block;color:var(--muted);font-size:.85rem;margin-top:.4rem}
+
+/* Poster rooms */
+.room-head p{color:var(--muted);margin-top:.75rem}
+.hall{margin-top:3rem;padding:4rem 2rem 3rem;background:linear-gradient(#fafaf9 78%,var(--floor) 78%);text-align:center}
+.frame{display:inline-block;max-width:min(100%,560px);padding:14px;background:#fff;border:1px solid #cfcfca;box-shadow:0 30px 40px -25px rgba(0,0,0,.45)}
+.frame img{display:block;width:100%;height:auto}
+.frame.empty{width:min(100%,460px);aspect-ratio:3/4;display:grid;place-items:center;color:var(--muted);font:italic 1.3rem var(--serif);border-style:dashed}
+.plaque{max-width:440px;margin:2.5rem auto 0;text-align:left;padding:1.1rem 1.4rem;background:#fff;border:1px solid var(--line);font-size:.9rem}
+.plaque h2{font-size:1.5rem;margin:0 0 .4rem}
+.plaque dl{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;margin-top:.5rem}
+.plaque dt{color:var(--muted)}
+.plaque dd{margin:0}
+.critics{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem}
+.critique{background:#fff;border:1px solid var(--line);padding:1.75rem}
+.critic{display:flex;gap:1rem;align-items:center;margin-bottom:1.25rem}
+.avatar{flex:none;width:64px;height:64px;border-radius:50%;background:var(--floor);border:1px solid var(--line);display:grid;place-items:center;font:600 1.4rem var(--serif);overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+.critic h3{font-size:1.25rem}
+.critic p{font-size:.82rem;color:var(--muted);line-height:1.35}
+.critique blockquote{font:italic 1.15rem/1.55 var(--serif)}
+.pager{display:flex;justify-content:space-between;margin-top:4rem;padding-top:1.5rem;border-top:1px solid var(--line)}
+.pager a{text-decoration:none;font-family:var(--serif);font-size:1.3rem}
+.pager a:hover{color:var(--accent)}
+
+/* Room themes */
+.room-1{--accent:#d10a0a}
+.room-1 .frame{border:3px solid #d10a0a;box-shadow:8px 8px 0 #000}
+.room-1 .plaque{border:2px solid #000;box-shadow:4px 4px 0 #ff9d5c}
+.room-1 .hall{background:linear-gradient(#fff 78%,#ffe3cc 78%)}
+.room-3{--accent:#c9a45a;--wall:#15100a;--ink:#f1e6d0;--muted:#a99b82;--line:#3a2f20;--floor:#0c0906}
+.room-3 .sidebar,.room-3 .plaque,.room-3 .critique{background:#1d160d}
+.room-3 .hall{background:radial-gradient(ellipse at 50% 0,#4a3719 0,#15100a 70%)}
+.room-3 .frame{background:#0c0906;border-color:var(--accent);box-shadow:0 0 70px -10px rgba(201,164,90,.5)}
+.room-3 .avatar{background:#2a2014}
+.room-3 h1{color:var(--accent)}
+
+/* Small screens: sidebar becomes a top strip */
+@media (max-width:860px){
+  body{padding-left:0}
+  .sidebar{position:static;width:auto;padding:1.25rem 1.25rem .5rem;border-right:0;border-bottom:1px solid var(--line)}
+  .sidebar nav{margin-top:1rem;flex-direction:row;flex-wrap:wrap;gap:.25rem 1rem}
+  .sidebar nav a{padding:.4rem 0;border-left:0;border-bottom:2px solid transparent}
+  .sidebar nav a span,.side-note{display:none}
+  main{padding:2.5rem 1.25rem 4rem}
+  .two-col,.critics,.room-links{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
