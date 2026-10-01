@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Bodoni+Moda:ital,wght@0,500;0,600;1,500&display=swap");
 /* The Vanguards Museum - shared styles */
 :root{
   --wall:#f3f3f1; --floor:#e8e8e5; --ink:#1d1d1f; --muted:#6a6a6d; --line:#d6d6d2;
@@ -91,3 +92,47 @@ section{margin-top:4.5rem}
   .two-col,.critics,.room-links{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* Showcase: poster on the left, written explanation on the right */
+main:has(.showcase){max-width:1240px}
+.showcase{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:2.5rem;align-items:start;margin-top:3rem}
+.showcase .hall{margin-top:0;padding:2.5rem 1.25rem 2rem;position:sticky;top:1.5rem}
+.essay{display:grid;gap:1rem}
+.essay-head p{color:var(--muted);font-size:.9rem}
+.essay-head h2{margin-bottom:.25rem}
+.essay-card{background:#fff;border:1px solid var(--line);border-left:3px solid var(--accent);padding:1.25rem 1.5rem}
+.essay-card h3{margin-bottom:.2rem}
+.essay-card .prompt{font:italic 1rem/1.4 var(--serif);color:var(--muted);margin-bottom:.6rem}
+.essay-card p:last-child{font-size:.95rem}
+.essay-card.position{border:1px solid var(--accent);border-left-width:3px;background:#fbfaf7}
+.room-2{--accent:#8f1019}
+.room-2 .frame{border-color:var(--accent);border-width:2px}
+.room-1 .essay-card{border-color:#000;border-left:5px solid #d10a0a;background:#fff4ea}
+.room-3 .essay-card,.room-3 .essay-card.position{background:#1d160d}
+@media (max-width:1100px){.showcase{grid-template-columns:1fr}.showcase .hall{position:static}}
+
+/* Single written-explanation card */
+.essay-card.single{border-left-width:3px;padding:1.75rem 2rem}
+.essay-card.single h2{font-size:2rem;margin-bottom:.2rem}
+.essay-card.single p{margin-bottom:1rem;max-width:none;font-size:.97rem}
+.essay-card.single p:last-child{margin-bottom:0}
+.essay-card.single .prompt{font-size:1rem;margin-bottom:1.25rem}
+
+/* Gallery I: pixel and paper-craft styling to echo the poster */
+.room-1 h1{font-family:"Silkscreen",monospace;font-weight:700;font-size:clamp(2rem,5vw,3.4rem);color:#d10a0a;text-shadow:3px 3px 0 #000;letter-spacing:.02em}
+.room-1 .sidebar{border-right:4px solid #d10a0a}
+.room-1 .hall{border:3px dashed #000;background:radial-gradient(rgba(255,157,92,.45) 1.5px,transparent 1.6px) 0 0/18px 18px,linear-gradient(#fff 78%,#ffe3cc 78%)}
+.room-1 .frame{position:relative;transform:rotate(-1deg)}
+.room-1 .frame::before{content:"";position:absolute;top:-16px;left:50%;width:110px;height:30px;margin-left:-55px;background:rgba(255,157,92,.85);transform:rotate(-3deg);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.room-1 .plaque{transform:rotate(.8deg)}
+.room-1 .essay-card.single{border:2px solid #000;border-left:6px solid #d10a0a;box-shadow:5px 5px 0 #ff9d5c}
+
+/* Gallery II: crimson, binary code and a gallery spotlight */
+.room-2 h1{font-family:"Bodoni Moda",var(--serif);font-weight:500;color:var(--accent);letter-spacing:.03em}
+.room-2 .room-head::after{content:"";display:block;width:90px;height:2px;margin-top:1.25rem;background:var(--accent)}
+.room-2 .sidebar{border-right:1px solid var(--accent)}
+.room-2 .hall{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='90'%3E%3Cg font-family='monospace' font-size='12' fill='%238f1019' fill-opacity='.11'%3E%3Ctext x='0' y='14'%3E0 1 1 0 1 0 0 1 1 0%3C/text%3E%3Ctext x='0' y='44'%3E1 0 0 1 0 1 1 0 0 1%3C/text%3E%3Ctext x='0' y='74'%3E0 1 0 1 1 0 1 0 1 1%3C/text%3E%3C/g%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 0,#fff 0,#eeeeec 80%)}
+.room-2 .frame{box-shadow:0 0 0 6px #fff,0 0 0 7px var(--accent),0 35px 45px -25px rgba(0,0,0,.5);margin:7px}
+.room-2 .plaque{border-top:3px solid var(--accent)}
+.room-2 .essay-card.single{border-top:3px solid var(--accent);border-left:1px solid var(--line)}
+.room-2 .essay-card.single h2{font-family:"Bodoni Moda",var(--serif);font-weight:500;font-size:1.7rem}
