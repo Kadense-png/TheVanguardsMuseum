@@ -136,3 +136,31 @@ main:has(.showcase){max-width:1240px}
 .room-2 .plaque{border-top:3px solid var(--accent)}
 .room-2 .essay-card.single{border-top:3px solid var(--accent);border-left:1px solid var(--line)}
 .room-2 .essay-card.single h2{font-family:"Bodoni Moda",var(--serif);font-weight:500;font-size:1.7rem}
+
+/* ===== Gallery I v2: the artist's palette (charcoal, red, peach paper, yellow) ===== */
+.room-1{--wall:#161616;--ink:#fff;--muted:#c9bfb3;--line:#3a3a3a;--floor:#0f0f0f;--accent:#ff1a1a;--peach:#ffb070;--yellow:#f2b632}
+.room-1 .sidebar{background:#1f1f1f;border-right:4px solid #ff1a1a}
+.room-1 .sidebar nav a:hover,.room-1 .sidebar nav a[aria-current]{border-color:var(--yellow)}
+.room-1 h1{color:#fff;text-shadow:3px 3px 0 #ff1a1a}
+.room-1 .tagline{font:400 .95rem/1.4 "Silkscreen",monospace;color:var(--peach);margin-top:1rem;max-width:none}
+.room-1 .room-head::after{content:"";display:block;margin-top:1.25rem;border-top:4px dashed #ff1a1a}
+.room-1 .room-head p:not(.tagline){color:var(--muted)}
+.room-1 .hall{background:radial-gradient(rgba(255,176,112,.22) 1.5px,transparent 1.6px) 0 0/18px 18px,#1c1c1c;border:3px dashed #ff1a1a}
+.room-1 .frame{background:#fff;border:3px solid #ff1a1a;box-shadow:8px 8px 0 #ff1a1a}
+.room-1 .frame::before{background:rgba(255,176,112,.9)}
+.room-1 .plaque{background:var(--peach);color:#161616;border:2px solid #161616;box-shadow:5px 5px 0 #ff1a1a}
+.room-1 .plaque dt{color:#6b3410}
+.room-1 .essay-card.single{position:relative;background:var(--peach);color:#161616;border:2px solid #161616;border-left:6px solid #ff1a1a;box-shadow:6px 6px 0 var(--yellow)}
+.room-1 .essay-card.single::after{content:"";position:absolute;top:14px;right:18px;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ff8c8c,#d10000 60%,#7a0000);box-shadow:2px 3px 3px rgba(0,0,0,.35)}
+.room-1 .essay-card.single .prompt{color:#6b3410}
+.room-1 .critique{background:#232323;border-color:#3a3a3a;border-top:3px solid #ff1a1a}
+.room-1 .avatar{background:#2d2d2d;color:var(--peach)}
+.room-1 .pager a:hover{color:var(--yellow)}
+
+/* ===== Gallery II v2: poster white fading into off-white ===== */
+.room-2{--wall:#ebe7e0;--floor:#e4dfd6}
+body.room-2{background:linear-gradient(#fff 0,#fff 420px,#ebe7e0 1300px) no-repeat,#ebe7e0}
+.room-2 .tagline{font:400 .8rem/1.8 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-top:1.25rem;max-width:42ch}
+.room-2 .hall{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='90'%3E%3Cg font-family='monospace' font-size='12' fill='%238f1019' fill-opacity='.09'%3E%3Ctext x='0' y='14'%3E0 1 1 0 1 0 0 1 1 0%3C/text%3E%3Ctext x='0' y='44'%3E1 0 0 1 0 1 1 0 0 1%3C/text%3E%3Ctext x='0' y='74'%3E0 1 0 1 1 0 1 0 1 1%3C/text%3E%3C/g%3E%3C/svg%3E"),linear-gradient(#fff 0,#f6f4f0 55%,#ebe7e0 100%)}
+.room-2 .plaque,.room-2 .critique,.room-2 .essay-card.single{background:#fcfbf9}
+.room-2 .sidebar{background:linear-gradient(#fff,#f7f5f1)}
